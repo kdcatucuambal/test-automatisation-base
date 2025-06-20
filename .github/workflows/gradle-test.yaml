@@ -27,11 +27,8 @@ jobs:
       - name: Run Gradle tests
         run: ./gradlew test
 
-      - name: Create ZIP of entire build directory
-        run: zip -r build-folder.zip build
-
-      - name: Upload ZIP artifact
+      - name: Upload build directory as artifact
         uses: actions/upload-artifact@v4
         with:
           name: build-folder
-          path: build-folder.zip
+          path: build/
